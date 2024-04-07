@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scroll_items"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Background ImageView -->
+
+        <!-- Content Layout -->
+        <LinearLayout
+            android:id="@+id/layout_items"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="top"
+            android:orientation="vertical"
+            android:translationY="-100px">
+
+            <ImageButton
+                android:id="@+id/button_home"
+                android:layout_width="61dp"
+                android:layout_height="59dp"
+                android:background="#00FFFFFF"
+                android:translationY="100px"
+                app:srcCompat="?attr/homeAsUpIndicator" />
+
+            <Button
+                android:id="@+id/button_addItem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|top"
+                android:layout_marginTop="8dp"
+                android:text="Add an item for "
+                android:translationY="-50px" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</ScrollView>
