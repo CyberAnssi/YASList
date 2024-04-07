@@ -7,10 +7,12 @@
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/textfield_vendor_name"
-        android:layout_width="335dp"
-        android:layout_height="47dp"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="108dp"
         android:hint="New Vendor Name"
+        android:maxLength="20"
+        android:maxLines="1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

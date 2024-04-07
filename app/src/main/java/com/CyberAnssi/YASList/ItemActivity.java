@@ -120,10 +120,6 @@ public class ItemActivity extends AppCompatActivity {
                 TextView textView_itemName = layout.findViewById(R.id.textView_itemName);
                 textView_itemName.setText(line);
 
-                // Replacing the text of the textView_quantity in the layout with the line
-                TextView textView_quantity = layout.findViewById(R.id.textView_quantity);
-                textView_quantity.setText(line);
-
                 // Find the delete button in the item view
                 ImageButton deleteButton = layout.findViewById(R.id.button_delete_item);
 

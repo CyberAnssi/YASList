@@ -79,9 +79,9 @@ public class PromptItem extends AppCompatActivity {
                     qType = "null";
                 }
 
-                if (fileName != null && !itemNameText.isEmpty() && !itemQuantityText.isEmpty()) {
+                if (fileName != null && qType != "null" && !itemNameText.isEmpty() && !itemQuantityText.isEmpty()) {
                     try {
-                        String fullItem = itemNameText + " " + itemQuantityText + " " + qType + "\n";
+                        String fullItem = itemNameText + "  " + itemQuantityText + " " + qType + "\n";
                         FileOutputStream fos = openFileOutput(fileName, Context.MODE_APPEND);
                         fos.write(fullItem.getBytes());
                         fos.close();
@@ -89,7 +89,7 @@ public class PromptItem extends AppCompatActivity {
                         // getting variable firstLine from ItemActivity
                         String firstLine = getIntent().getStringExtra("firstLine");
 
-
+                        // Starting ItemActivity
                         Intent intent = new Intent(PromptItem.this, ItemActivity.class);
                         intent.putExtra("fileName", fileName); // Pass the fileName back to the ItemActivity
                         intent.putExtra("firstLine", firstLine); // Pass the firstLine back to the ItemActivity
@@ -103,7 +103,7 @@ public class PromptItem extends AppCompatActivity {
                         Toast.makeText(PromptItem.this, "Error: IO exception", Toast.LENGTH_SHORT).show();
                     }
                 } else {
-                    Toast.makeText(PromptItem.this, "Error: Empty fields or fileName is null", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(PromptItem.this, "Error: Please fill in all fields or cancel", Toast.LENGTH_SHORT).show();
                 }
             }
         });
