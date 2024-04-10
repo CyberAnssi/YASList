@@ -18,7 +18,18 @@
             android:layout_marginTop="8dp"
             android:text="Add a new vendor"
             android:layout_gravity="center_horizontal"  />
+
+        <ImageButton
+            android:id="@+id/button_about"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:background="#00FFFFFF"
+            android:translationX="-16dp"
+            android:translationY="-40dp"
+            app:srcCompat="@android:drawable/ic_menu_info_details" />
     </LinearLayout>
 
 </ScrollView>
+
 

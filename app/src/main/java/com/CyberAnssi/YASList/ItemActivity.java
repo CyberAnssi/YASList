@@ -123,10 +123,10 @@ public class ItemActivity extends AppCompatActivity {
                 // Find the delete button in the item view
                 ImageButton deleteButton = layout.findViewById(R.id.button_delete_item);
 
-                // Set a click listener for the delete button
-                deleteButton.setOnClickListener(new View.OnClickListener() {
+// Set a long click listener for the delete button
+                deleteButton.setOnLongClickListener(new View.OnLongClickListener() {
                     @Override
-                    public void onClick(View view) {
+                    public boolean onLongClick(View view) {
                         // Remove the line from the file
                         try {
                             // Read the existing content of the file and remove the line corresponding to the currentItem
@@ -162,6 +162,7 @@ public class ItemActivity extends AppCompatActivity {
                             e.printStackTrace();
                             // Handle IO exception
                         }
+                        return true; // Return true to indicate that the long click event is consumed
                     }
                 });
             }
@@ -181,3 +182,5 @@ public class ItemActivity extends AppCompatActivity {
 
     }
 }
+
+

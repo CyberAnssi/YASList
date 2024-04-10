@@ -26,7 +26,7 @@
                 android:layout_width="61dp"
                 android:layout_height="59dp"
                 android:background="#00FFFFFF"
-                android:translationY="100px"
+                android:translationY="50dp"
                 app:srcCompat="?attr/homeAsUpIndicator" />
 
             <Button
@@ -34,7 +34,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal|top"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="14dp"
+                android:layout_marginBottom="16dp"
                 android:text="Add an item for "
                 android:translationY="-50px" />
 
@@ -43,3 +44,4 @@
     </RelativeLayout>
 
 </ScrollView>
+

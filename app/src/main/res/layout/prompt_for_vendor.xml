@@ -21,10 +21,9 @@
         android:id="@+id/button_create_vendor_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
         android:layout_marginTop="38dp"
         android:text="Create vendor"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/textfield_vendor_name"
         app:layout_constraintTop_toBottomOf="@+id/textfield_vendor_name" />
 
     <Button
@@ -32,8 +31,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="38dp"
-        android:layout_marginEnd="40dp"
         android:text="Cancel"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/textfield_vendor_name"
         app:layout_constraintTop_toBottomOf="@+id/textfield_vendor_name" />
 </androidx.constraintlayout.widget.ConstraintLayout>

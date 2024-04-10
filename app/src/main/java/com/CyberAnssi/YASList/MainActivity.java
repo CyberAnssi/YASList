@@ -1,5 +1,6 @@
 package com.CyberAnssi.YASList;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,6 +11,7 @@ import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.io.BufferedReader;
@@ -94,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
                             startActivity(intent);
                         } else {
                             // Handle the case where fileName or firstLine is null
-                            // For CyberAnssi, display an error message or handle it according to your app logic
+                            // For user, display an error message or handle it according to your app logic
                             Toast.makeText(MainActivity.this, "Error: fileName or firstLine is null", Toast.LENGTH_SHORT).show();
                         }
                     }
@@ -102,10 +104,10 @@ public class MainActivity extends AppCompatActivity {
 
                 // Find the delete button
                 ImageButton deleteButton = vendorView.findViewById(R.id.button_deleteVendor);
-                // Set a click listener for the button_deleteVendor
-                deleteButton.setOnClickListener(new View.OnClickListener() {
+                // Set a long click listener for the button_deleteVendor
+                deleteButton.setOnLongClickListener(new View.OnLongClickListener() {
                     @Override
-                    public void onClick(View view) {
+                    public boolean onLongClick(View view) {
                         // Check if fileName and firstLine are not null before proceeding
                         if (fileName != null && firstLine != null) {
                             // Remove the text file.
@@ -121,9 +123,10 @@ public class MainActivity extends AppCompatActivity {
                             }
                         } else {
                             // Handle the case where fileName or firstLine is null
-                            // For CyberAnssi, display an error message or handle it according to your app logic
+                            // For user, display an error message or handle it according to your app logic
                             Toast.makeText(MainActivity.this, "Error: fileName or firstLine is null", Toast.LENGTH_SHORT).show();
                         }
+                        return true; // Return true to indicate that the long click event is consumed
                     }
                 });
 
@@ -145,5 +148,37 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        // Find the button button_about to open dialog_about
+        ImageButton aboutButton = findViewById(R.id.button_about);
+// Set a click listener for the button_about
+        aboutButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Open dialog_info
+                Dialog dialog = new Dialog(MainActivity.this);
+                dialog.setContentView(R.layout.dialog_about);
+                dialog.show();
+
+                // Find the button_ok button in the dialog
+                Button buttonOk = dialog.findViewById(R.id.button_ok);
+                // Set a click listener for the button_ok
+                buttonOk.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        // Close the dialog
+                        dialog.dismiss();
+                    }
+                });
+            }
+        });
+
+
+
+
+
+
+
+
     }
 }
